@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Validation Rules | SchemaGuard</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>SchemaGuard</h1>
+            <nav>
+                <a href="index.html">Dashboard</a>
+                <a href="datasets.html">Datasets</a>
+                <a href="rules.html">Rules</a>
+                <a href="issues.html">Issues</a>
+                <a href="login.html">Login</a>
+            </nav>
+        </header>
+
+        <main>
+            <section>
+                <h2>Validation Rules</h2>
+                <p>Create, manage, and monitor data validation rules to maintain data quality.</p>
+            </section>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Rule ID</th>
+                        <th scope="col">Rule Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>R001</td>
+                        <td>Missing Values</td>
+                        <td>Detect empty fields</td>
+                        <td>Completeness</td>
+                        <td>Active</td>
+                    </tr>
+                    <tr>
+                        <td>R002</td>
+                        <td>Duplicate Check</td>
+                        <td>Detect duplicate records</td>
+                        <td>Uniqueness</td>
+                        <td>Active</td>
+                    </tr>
+                    <tr>
+                        <td>R003</td>
+                        <td>Data Type</td>
+                        <td>Validate column data types</td>
+                        <td>Validity</td>
+                        <td>Active</td>
+                    </tr>
+                    <tr>
+                        <td>R004</td>
+                        <td>Range Check</td>
+                        <td>Validate permitted value ranges</td>
+                        <td>Accuracy</td>
+                        <td>Inactive</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Add New Rule</h3>
+            <form>
+                <label for="rule-name">Rule Name:</label>
+                <input type="text" id="rule-name" name="rule-name">
+
+                <label for="rule-description">Rule Description:</label>
+                <textarea id="rule-description" name="rule-description"></textarea>
+
+                <label for="category">Category:</label>
+                <select id="category" name="category">
+                    <option value="" disabled selected>Select an option...</option>
+                    <option value="completeness">Completeness</option>
+                    <option value="uniqueness">Uniqueness</option>
+                    <option value="validity">Validity</option>
+                    <option value="accuracy">Accuracy</option>
+                </select>
+
+                <button type="submit" id="create-rule" name="create-rule">Create Rule</button>
+
+            </form>
+         
+        </main>
+
+        <footer>
+            SchemaGuard © 2026
+        </footer>
+        
+    </body>
+    
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Issues | SchemaGuard</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>SchemaGuard</h1>
+            <nav>
+                <a href="index.html">Dashboard</a>
+                <a href="datasets.html">Datasets</a>
+                <a href="rules.html">Rules</a>
+                <a href="issues.html">Issues</a>
+                <a href="login.html">Login</a>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Data Quality Issues</h2>
+            <p>Monitor and resolve data quality issues detected across your datasets.</p>
+            <section>
+                <h2>Issue Summary</h2>
+                <section>
+                    <h3>Total Issues</h3>
+                    <p>24</p>
+                </section>
+                <section>
+                    <h3>Critical</h3>
+                    <p>8</p>
+                </section>
+                <section>
+                    <h3>Warnings</h3>
+                    <p>16</p>
+                </section>
+            </section>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Issue ID</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Dataset</th>
+                        <th scope="col">Severity</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                    </tr>   
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SG001</td>
+                        <td>Missing customer email</td>
+                        <td>Customers.csv</td>
+                        <td>Critical</td>
+                        <td>Unresolved</td>
+                        <td><button type="button">View</button></td>
+                    </tr>
+                    <tr>
+                        <td>SG002</td>
+                        <td>Duplicate transaction ID</td>
+                        <td>Transactions.csv</td>
+                        <td>Warning</td>
+                        <td>Resolved</td>
+                        <td><button type="button">View</button></td>
+                    </tr>
+                    <tr>
+                        <td>SG003</td>
+                        <td>Invalid employee age</td>
+                        <td>Employees.xlsx</td>
+                        <td>Critical</td>
+                        <td>Unresolved</td>
+                        <td><button type="button">View</button></td>
+                    </tr>
+                    <tr>
+                        <td>SG004</td>
+                        <td>Missing phone number</td>
+                        <td>Customers.csv</td>
+                        <td>Warning</td>
+                        <td>Unresolved</td>
+                        <td><button type="button">View</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <section>
+                <h3>Filter Issues</h3>
+                <form>
+                    <label for="severity">Severity:</label>
+                    <select id="severity" name="severity">
+                        <option value="" disabled selected>Select an option...</option>
+                        <option value="all-severity">All Severities</option>
+                        <option value="critical">Critical</option>
+                        <option value="warning">Warning</option>
+                    </select>
+
+                    <label for="status">Status:</label>
+                    <select id="status" name="status">
+                        <option value="" disabled selected>Select an option...</option>
+                        <option value="all-status">All Statuses</option>
+                        <option value="resolved">Resolved</option>
+                        <option value="unresolved">Unresolved</option>
+                    </select>
+                </form>
+            </section>
+
+            
+        
+        </main>
+
+        <footer>
+            SchemaGuard © 2026
+        </footer>
+        
+    </body>
+    
+</html>

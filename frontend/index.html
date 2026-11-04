@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | SchemaGuard</title>
+</head>
+
+<body>
+    <header>
+        <h1>SchemaGuard</h1>
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="datasets.html">Datasets</a>
+            <a href="rules.html">Rules</a>
+            <a href="issues.html">Issues</a>                
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+        <h2>Dashboard Overview</h2>
+        <p>Monitor your datasets, validation rules, and data quality performance in one place.</p>
+
+        </section>
+        <section>
+            <h2>Overview Metrics</h2>
+            <section>
+                <h3>Total Datasets</h3>
+                <p>24</p>
+            </section>
+            <section>
+                <h3>Validation Rules</h3>
+                <p>12</p>
+            </section>
+            <section>
+                <h3>Detected Issues</h3>
+                <p>24</p>
+            </section>
+            <section>
+                <h3>Data Quality Score</h3>
+                <p>94%</p>
+            </section>
+        </section>
+
+
+        <section>
+            <h2>Recent Datasets</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Dataset Name</th>
+                        <th scope="col">File Type</th>
+                        <th scope="col">Records</th>
+                        <th scope="col">Status</th>
+                    </tr>   
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Customers</td>
+                        <td>CSV</td>
+                        <td>1,500</td>
+                        <td>Validated</td>
+                    </tr>
+                    <tr>
+                        <td>Employees</td>
+                        <td>Excel</td>
+                        <td>800</td>
+                        <td>Pending</td>
+                    </tr>
+                    <tr>
+                        <td>Transactions</td>
+                        <td>CSV</td>
+                        <td>2,500</td>
+                        <td>Failed</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+        
+
+        <section>
+            <h2>Recent Issues</h2>
+            <ul>
+                <li>Missing customer email — Critical</li>
+                <li>Duplicate transaction ID — Warning</li>
+                <li>Invalid employee age — Critical</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Quick Actions</h2>
+            <a href="datasets.html">Manage Datasets</a>
+            <a href="rules.html">Manage Rules</a>
+            <a href="issues.html">View Issues</a>
+        </section>
+
+    </main>
+    <footer>
+        SchemaGuard © 2026
+    </footer>
+    
+
+</body>
+</html>

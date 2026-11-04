@@ -1,0 +1,775 @@
+
+/* =================================
+   1. DESIGN SYSTEM
+================================= */
+
+:root {
+    --bg-main: #101512;
+    --bg-sidebar: #151D18;
+    --bg-card: #1B2620;
+
+    --border: #2C3930;
+
+    --accent: #C7F36B;
+    --text-primary: #F1F5EF;
+    --text-secondary: #929F94;
+
+    --success: #65D69A;
+    --warning: #F5B85C;
+    --critical: #F07878;
+
+    --font-main: 'Manrope', sans-serif;
+}
+
+
+/* =================================
+   2. RESET AND GLOBAL STYLES
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+
+/* =================================
+   3. MAIN APPLICATION LAYOUT
+================================= */
+
+.app-shell {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =================================
+   4. SIDEBAR
+================================= */
+
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background-color: var(--bg-sidebar);
+    border-right: 1px solid var(--border);
+
+    padding: 28px 18px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 55px;
+}
+
+.brand-icon {
+    width: 42px;
+    height: 42px;
+
+    background-color: var(--accent);
+    color: #101512;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.brand h2 {
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.brand span {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 9px;
+    letter-spacing: 1.3px;
+}
+
+.sidebar-label {
+    color: var(--text-secondary);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    margin-bottom: 15px;
+    padding-left: 12px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    color: var(--text-secondary);
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.nav-link:hover {
+    background-color: #202B24;
+    color: var(--text-primary);
+}
+
+.nav-link.active {
+    background-color: #283529;
+    color: var(--accent);
+
+    border-left: 3px solid var(--accent);
+}
+
+.nav-icon {
+    width: 20px;
+    text-align: center;
+    font-size: 17px;
+}
+
+.nav-count {
+    margin-left: auto;
+
+    background-color: #382923;
+    color: var(--warning);
+
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.workspace-card {
+    background-color: #202B24;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    padding: 13px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.workspace-card strong {
+    display: block;
+    font-size: 11px;
+}
+
+.workspace-card small {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 10px;
+}
+
+
+/* =================================
+   5. STATUS INDICATORS
+================================= */
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    display: inline-block;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    background-color: var(--success);
+}
+
+
+/* =================================
+   6. MAIN CONTENT
+================================= */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+
+    padding: 30px 38px;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+    color: var(--text-secondary);
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    font-weight: 700;
+}
+
+.topbar h1 {
+    font-size: 25px;
+    margin-top: 5px;
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.live-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--success);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #354638;
+    color: var(--accent);
+
+    font-weight: 800;
+    font-size: 12px;
+}
+
+.profile strong {
+    display: block;
+    font-size: 12px;
+}
+
+.profile small {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 10px;
+}
+
+
+/* =================================
+   7. WELCOME SECTION
+================================= */
+
+.welcome-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 32px 0;
+    gap: 20px;
+}
+
+.welcome-section h2 {
+    font-size: 21px;
+    margin-bottom: 6px;
+}
+
+.welcome-section p {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.primary-button {
+    background-color: var(--accent);
+    color: #101512;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 11px 18px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    transition: 0.2s ease;
+}
+
+.primary-button:hover {
+    background-color: #D7FF83;
+    transform: translateY(-2px);
+}
+
+
+/* =================================
+   8. METRIC CARDS
+================================= */
+
+.metrics-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 17px;
+    margin-bottom: 25px;
+}
+
+.metric-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 22px;
+    transition: 0.2s ease;
+}
+
+.metric-card:hover {
+    border-color: #52624C;
+    transform: translateY(-3px);
+}
+
+.metric-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.metric-card h3 {
+    font-size: 29px;
+    margin: 13px 0 4px;
+}
+
+.metric-note {
+    color: var(--text-secondary);
+    font-size: 11px;
+}
+
+.warning-text {
+    color: var(--warning);
+}
+
+.success-text {
+    color: var(--accent);
+}
+
+
+/* =================================
+   9. DASHBOARD PANELS
+================================= */
+
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns: 1.7fr 1fr;
+
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.panel {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+    padding: 23px;
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 22px;
+    gap: 12px;
+}
+
+.panel-header h2 {
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.panel-header p {
+    color: var(--text-secondary);
+    font-size: 11px;
+}
+
+.text-link {
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+
+/* =================================
+   10. DATASET TABLE
+================================= */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    white-space: nowrap;
+}
+
+thead {
+    color: var(--text-secondary);
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+th {
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+td {
+    padding: 16px 10px;
+    border-bottom: 1px solid var(--border);
+
+    font-size: 11px;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #222E26;
+}
+
+
+/* =================================
+   11. STATUS BADGES
+================================= */
+
+.badge {
+    display: inline-block;
+
+    padding: 5px 10px;
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.success-badge {
+    color: var(--success);
+    background-color: #1C382B;
+}
+
+.warning-badge {
+    color: var(--warning);
+    background-color: #3A3020;
+}
+
+.pending-badge {
+    color: var(--text-secondary);
+    background-color: #303B33;
+}
+
+.critical-badge {
+    color: var(--critical);
+    background-color: #3B2526;
+}
+
+
+/* =================================
+   12. QUALITY SUMMARY
+================================= */
+
+.quality-score {
+    text-align: center;
+    margin: 22px 0;
+}
+
+.quality-score h3 {
+    font-size: 48px;
+    color: var(--accent);
+    line-height: 1.2;
+}
+
+.quality-score h3 span {
+    font-size: 25px;
+}
+
+.quality-score p {
+    color: var(--text-secondary);
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.quality-bar {
+    width: 100%;
+    height: 9px;
+
+    background-color: #354239;
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.quality-progress {
+    width: 96%;
+    height: 100%;
+
+    background-color: var(--accent);
+    border-radius: 20px;
+}
+
+.quality-legend {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.quality-legend div {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    color: var(--text-secondary);
+    font-size: 10px;
+}
+
+.quality-legend strong {
+    color: var(--text-primary);
+    margin-left: 3px;
+}
+
+.legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.success-dot {
+    background-color: var(--success);
+}
+
+.warning-dot {
+    background-color: var(--warning);
+}
+
+
+/* =================================
+   13. RECENT ISSUES
+================================= */
+
+.issues-panel {
+    margin-bottom: 25px;
+}
+
+.issue-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 0;
+    border-top: 1px solid var(--border);
+
+    gap: 15px;
+}
+
+.issue-item strong {
+    font-size: 12px;
+}
+
+.issue-item p {
+    color: var(--text-secondary);
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+
+/* =================================
+   14. FOOTER
+================================= */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
+
+    color: var(--text-secondary);
+    font-size: 10px;
+}
+
+
+/* =================================
+   15. RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 1100px) {
+
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        width: 190px;
+        min-width: 190px;
+        padding: 20px 12px;
+    }
+
+    .main-content {
+        padding: 22px 18px;
+    }
+
+    .topbar-right {
+        gap: 12px;
+    }
+
+    .live-status {
+        display: none;
+    }
+
+}
+
+@media (max-width: 560px) {
+
+    .app-shell {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 0;
+        padding: 15px;
+    }
+
+    .brand {
+        margin-bottom: 18px;
+    }
+
+    .sidebar-label,
+    .sidebar-bottom,
+    .workspace-card {
+        display: none;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .nav-link {
+        padding: 8px;
+        font-size: 11px;
+        gap: 5px;
+    }
+
+    .nav-icon {
+        display: none;
+    }
+
+    .nav-count {
+        display: none;
+    }
+
+    .main-content {
+        padding: 20px 14px;
+    }
+
+    .topbar {
+        align-items: flex-start;
+    }
+
+    .profile {
+        display: none;
+    }
+
+    .welcome-section {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .metrics-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .metric-card {
+        padding: 15px;
+    }
+
+    .metric-card h3 {
+        font-size: 23px;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+}
