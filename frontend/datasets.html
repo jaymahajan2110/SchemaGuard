@@ -1,73 +1,241 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Datasets | SchemaGuard</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datasets | SchemaGuard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-    <body>
-        <header>
-            <h1>SchemaGuard</h1>
-            <nav>
-                <a href="index.html">Dashboard</a>
-                <a href="datasets.html">Datasets</a>
-                <a href="rules.html">Rules</a>
-                <a href="issues.html">Issues</a>
-                <a href="login.html">Login</a>
+<body>
+
+    <div class="dashboard-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                SchemaGuard
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="index.html" class="sidebar-link">Dashboard</a>
+                <a href="datasets.html" class="sidebar-link active">Datasets</a>
+                <a href="rules.html" class="sidebar-link">Validation Rules</a>
+                <a href="issues.html" class="sidebar-link">Issues</a>
             </nav>
-        </header>
 
-        <main>
-            <section>
-                <h2>Datasets</h2>
-                <p>Manage, upload, and monitor all your datasets in one place.</p>
-            </section>
+            <nav class="sidebar-nav" style="margin-top: auto;">
+                <a href="login.html" class="sidebar-link">Login</a>
+                <a href="register.html" class="sidebar-link">Register</a>
+            </nav>
+        </aside>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th scope="col">Dataset Name</th>
-                        <th scope="col">File Type</th>
-                        <th scope="col">Upload Date</th>
-                        <th scope="col">Records</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Action</th>
-                    </tr>   
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Customers</td>
-                        <td>CSV</td>
-                        <td>04 Nov 2026</td>
-                        <td>1,500</td>
-                        <td>Validated</td>
-                        <td><button type="button">View</button></td>
-                    </tr>
-                    <tr>
-                        <td>Employees</td>
-                        <td>Excel</td>
-                        <td>03 Nov 2026</td>
-                        <td>800</td>
-                        <td>Pending</td>
-                        <td><button type="button">View</button></td>
-                    </tr>
-                    <tr>
-                        <td>Transactions</td>
-                        <td>CSV</td>
-                        <td>02 Nov 2026</td>
-                        <td>2,500</td>
-                        <td>Failed</td>
-                        <td><button type="button">View</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </main>
+        <!-- Main Content -->
+        <div class="dashboard-main">
 
-        <footer>
-            SchemaGuard © 2026
-        </footer>
-        
-    </body>
-    
+            <!-- Topbar -->
+            <header class="topbar">
+                <div>
+                    <h3>Datasets</h3>
+                </div>
+
+                <div class="user-profile">
+                    <div class="user-avatar">JM</div>
+                    <span>Admin</span>
+                </div>
+            </header>
+
+            <main class="dashboard-content">
+
+                <!-- Page Heading -->
+                <section class="flex-between mb-4">
+                    <div>
+                        <h1 class="page-title">Datasets</h1>
+                        <p class="page-subtitle">
+                            Upload, manage and monitor your dataset quality.
+                        </p>
+                    </div>
+
+                    <button type="button" class="btn btn-primary">
+                        + Upload Dataset
+                    </button>
+                </section>
+
+                <!-- Dataset Statistics -->
+                <section class="kpi-grid mb-4">
+
+                    <article class="kpi-card">
+                        <span class="kpi-label">Total Datasets</span>
+                        <span class="kpi-value">24</span>
+                        <span class="kpi-change text-info">
+                            Stored datasets
+                        </span>
+                    </article>
+
+                    <article class="kpi-card">
+                        <span class="kpi-label">Validated</span>
+                        <span class="kpi-value">18</span>
+                        <span class="kpi-change text-success">
+                            Successfully checked
+                        </span>
+                    </article>
+
+                    <article class="kpi-card">
+                        <span class="kpi-label">Pending</span>
+                        <span class="kpi-value">04</span>
+                        <span class="kpi-change text-warning">
+                            Awaiting validation
+                        </span>
+                    </article>
+
+                    <article class="kpi-card">
+                        <span class="kpi-label">Failed</span>
+                        <span class="kpi-value">02</span>
+                        <span class="kpi-change text-danger">
+                            Require attention
+                        </span>
+                    </article>
+
+                </section>
+
+                <!-- Dataset Table -->
+                <section class="panel">
+
+                    <div class="panel-header">
+                        <div>
+                            <h3>All Datasets</h3>
+                            <p>Overview of your uploaded datasets and their status.</p>
+                        </div>
+
+                        <span class="badge-info">24 Datasets</span>
+                    </div>
+
+                    <div class="search-filter">
+                        <input
+                            type="search"
+                            class="form-control"
+                            placeholder="Search datasets..."
+                            aria-label="Search datasets"
+                        >
+
+                        <select class="form-control" aria-label="Filter by status">
+                            <option value="">All Status</option>
+                            <option value="validated">Validated</option>
+                            <option value="pending">Pending</option>
+                            <option value="failed">Failed</option>
+                        </select>
+
+                        <select class="form-control" aria-label="Filter by file type">
+                            <option value="">All File Types</option>
+                            <option value="csv">CSV</option>
+                            <option value="excel">Excel</option>
+                            <option value="json">JSON</option>
+                        </select>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Dataset Name</th>
+                                    <th>File Type</th>
+                                    <th>Records</th>
+                                    <th>Last Updated</th>
+                                    <th>Quality Score</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td><strong>Customers</strong></td>
+                                    <td>CSV</td>
+                                    <td>1,500</td>
+                                    <td>06 Nov 2026</td>
+                                    <td>98%</td>
+                                    <td>
+                                        <span class="badge-success">Validated</span>
+                                    </td>
+                                    <td>
+                                        <a href="#customers">View</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>Employees</strong></td>
+                                    <td>Excel</td>
+                                    <td>800</td>
+                                    <td>05 Nov 2026</td>
+                                    <td>Pending</td>
+                                    <td>
+                                        <span class="badge-warning">Pending</span>
+                                    </td>
+                                    <td>
+                                        <a href="#employees">View</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>Transactions</strong></td>
+                                    <td>CSV</td>
+                                    <td>2,500</td>
+                                    <td>04 Nov 2026</td>
+                                    <td>62%</td>
+                                    <td>
+                                        <span class="badge-danger">Failed</span>
+                                    </td>
+                                    <td>
+                                        <a href="#transactions">View</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>Products</strong></td>
+                                    <td>JSON</td>
+                                    <td>950</td>
+                                    <td>03 Nov 2026</td>
+                                    <td>95%</td>
+                                    <td>
+                                        <span class="badge-success">Validated</span>
+                                    </td>
+                                    <td>
+                                        <a href="#products">View</a>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </section>
+
+                <!-- Recent Activity -->
+                <section class="panel mt-4">
+
+                    <div class="panel-header">
+                        <h3>Dataset Management</h3>
+                    </div>
+
+                    <p>
+                        Keep your datasets organized and monitor validation
+                        results to maintain data quality across your workspace.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2">
+                        <span class="badge-info">CSV Support</span>
+                        <span class="badge-info">Excel Support</span>
+                        <span class="badge-info">JSON Support</span>
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+</body>
 </html>

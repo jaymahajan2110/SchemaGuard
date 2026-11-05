@@ -1,96 +1,309 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Validation Rules | SchemaGuard</title>
-    </head>
 
-    <body>
-        <header>
-            <h1>SchemaGuard</h1>
-            <nav>
-                <a href="index.html">Dashboard</a>
-                <a href="datasets.html">Datasets</a>
-                <a href="rules.html">Rules</a>
-                <a href="issues.html">Issues</a>
-                <a href="login.html">Login</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Rules | SchemaGuard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                SchemaGuard
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="index.html" class="sidebar-link">Dashboard</a>
+                <a href="datasets.html" class="sidebar-link">Datasets</a>
+                <a href="rules.html" class="sidebar-link active">Validation Rules</a>
+                <a href="issues.html" class="sidebar-link">Issues</a>
             </nav>
-        </header>
 
-        <main>
-            <section>
-                <h2>Validation Rules</h2>
-                <p>Create, manage, and monitor data validation rules to maintain data quality.</p>
-            </section>
-            <table>
-                <thead>
-                    <tr>
-                        <th scope="col">Rule ID</th>
-                        <th scope="col">Rule Name</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Category</th>
-                        <th scope="col">Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>R001</td>
-                        <td>Missing Values</td>
-                        <td>Detect empty fields</td>
-                        <td>Completeness</td>
-                        <td>Active</td>
-                    </tr>
-                    <tr>
-                        <td>R002</td>
-                        <td>Duplicate Check</td>
-                        <td>Detect duplicate records</td>
-                        <td>Uniqueness</td>
-                        <td>Active</td>
-                    </tr>
-                    <tr>
-                        <td>R003</td>
-                        <td>Data Type</td>
-                        <td>Validate column data types</td>
-                        <td>Validity</td>
-                        <td>Active</td>
-                    </tr>
-                    <tr>
-                        <td>R004</td>
-                        <td>Range Check</td>
-                        <td>Validate permitted value ranges</td>
-                        <td>Accuracy</td>
-                        <td>Inactive</td>
-                    </tr>
-                </tbody>
-            </table>
-            <h3>Add New Rule</h3>
-            <form>
-                <label for="rule-name">Rule Name:</label>
-                <input type="text" id="rule-name" name="rule-name">
+            <nav class="sidebar-nav" style="margin-top: auto;">
+                <a href="login.html" class="sidebar-link">Login</a>
+                <a href="register.html" class="sidebar-link">Register</a>
+            </nav>
 
-                <label for="rule-description">Rule Description:</label>
-                <textarea id="rule-description" name="rule-description"></textarea>
+        </aside>
 
-                <label for="category">Category:</label>
-                <select id="category" name="category">
-                    <option value="" disabled selected>Select an option...</option>
-                    <option value="completeness">Completeness</option>
-                    <option value="uniqueness">Uniqueness</option>
-                    <option value="validity">Validity</option>
-                    <option value="accuracy">Accuracy</option>
-                </select>
+        <!-- Main Content -->
+        <div class="dashboard-main">
 
-                <button type="submit" id="create-rule" name="create-rule">Create Rule</button>
+            <!-- Topbar -->
+            <header class="topbar">
 
-            </form>
-         
-        </main>
+                <h3>Validation Rules</h3>
 
-        <footer>
-            SchemaGuard © 2026
-        </footer>
-        
-    </body>
-    
+                <div class="user-profile">
+                    <div class="user-avatar">JM</div>
+                    <span>Admin</span>
+                </div>
+
+            </header>
+
+            <main class="dashboard-content">
+
+                <!-- Page Heading -->
+                <section class="mb-4">
+
+                    <h1 class="page-title">Validation Rules</h1>
+
+                    <p class="page-subtitle">
+                        Create, manage and monitor validation rules
+                        to maintain dataset quality.
+                    </p>
+
+                </section>
+
+                <!-- Rule Statistics -->
+                <section class="mb-4">
+
+                    <div class="flex-between mb-3">
+                        <h3>Rules Overview</h3>
+                        <span class="text-muted">Current Configuration</span>
+                    </div>
+
+                    <div class="kpi-grid">
+
+                        <article class="kpi-card">
+                            <span class="kpi-label">Total Rules</span>
+                            <span class="kpi-value">12</span>
+                            <span class="kpi-change text-info">
+                                Configured rules
+                            </span>
+                        </article>
+
+                        <article class="kpi-card">
+                            <span class="kpi-label">Active Rules</span>
+                            <span class="kpi-value">10</span>
+                            <span class="kpi-change text-success">
+                                Currently enabled
+                            </span>
+                        </article>
+
+                        <article class="kpi-card">
+                            <span class="kpi-label">Inactive Rules</span>
+                            <span class="kpi-value">2</span>
+                            <span class="kpi-change text-warning">
+                                Currently disabled
+                            </span>
+                        </article>
+
+                        <article class="kpi-card">
+                            <span class="kpi-label">Rule Categories</span>
+                            <span class="kpi-value">4</span>
+                            <span class="kpi-change text-info">
+                                Quality dimensions
+                            </span>
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <!-- Rules Table -->
+                <section class="panel mb-4">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h3>All Validation Rules</h3>
+                            <p>Manage the rules used to validate your datasets.</p>
+                        </div>
+
+                        <span class="badge-info">12 Rules</span>
+
+                    </div>
+
+                    <div class="search-filter">
+
+                        <input
+                            type="search"
+                            class="form-control"
+                            placeholder="Search rules..."
+                            aria-label="Search validation rules"
+                        >
+
+                        <select class="form-control" aria-label="Filter by category">
+                            <option value="">All Categories</option>
+                            <option value="completeness">Completeness</option>
+                            <option value="uniqueness">Uniqueness</option>
+                            <option value="validity">Validity</option>
+                            <option value="accuracy">Accuracy</option>
+                        </select>
+
+                        <select class="form-control" aria-label="Filter by status">
+                            <option value="">All Statuses</option>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+
+                    </div>
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Rule ID</th>
+                                    <th>Rule Name</th>
+                                    <th>Description</th>
+                                    <th>Category</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>R001</td>
+                                    <td><strong>Missing Values</strong></td>
+                                    <td>Detect empty or null fields</td>
+                                    <td>Completeness</td>
+                                    <td>
+                                        <span class="badge-success">Active</span>
+                                    </td>
+                                    <td><a href="#R001">View</a></td>
+                                </tr>
+
+                                <tr>
+                                    <td>R002</td>
+                                    <td><strong>Duplicate Check</strong></td>
+                                    <td>Detect duplicate records</td>
+                                    <td>Uniqueness</td>
+                                    <td>
+                                        <span class="badge-success">Active</span>
+                                    </td>
+                                    <td><a href="#R002">View</a></td>
+                                </tr>
+
+                                <tr>
+                                    <td>R003</td>
+                                    <td><strong>Data Type</strong></td>
+                                    <td>Validate column data types</td>
+                                    <td>Validity</td>
+                                    <td>
+                                        <span class="badge-success">Active</span>
+                                    </td>
+                                    <td><a href="#R003">View</a></td>
+                                </tr>
+
+                                <tr>
+                                    <td>R004</td>
+                                    <td><strong>Range Check</strong></td>
+                                    <td>Validate permitted value ranges</td>
+                                    <td>Accuracy</td>
+                                    <td>
+                                        <span class="badge-pending">Inactive</span>
+                                    </td>
+                                    <td><a href="#R004">View</a></td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+                <!-- Create New Rule -->
+                <section class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h3>Create New Rule</h3>
+                            <p>Configure a new data validation rule.</p>
+                        </div>
+
+                        <span class="badge-info">Rule Configuration</span>
+
+                    </div>
+
+                    <form action="#" method="post">
+
+                        <div class="form-group">
+                            <label for="rule-name">Rule Name</label>
+
+                            <input
+                                type="text"
+                                id="rule-name"
+                                name="rule-name"
+                                class="form-control"
+                                placeholder="e.g. Email Validation"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rule-description">Rule Description</label>
+
+                            <textarea
+                                id="rule-description"
+                                name="rule-description"
+                                class="form-control"
+                                placeholder="Describe what this rule should validate..."
+                                required
+                            ></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="category">Rule Category</label>
+
+                            <select
+                                id="category"
+                                name="category"
+                                class="form-control"
+                                required
+                            >
+                                <option value="" disabled selected>
+                                    Select a category
+                                </option>
+
+                                <option value="completeness">Completeness</option>
+                                <option value="uniqueness">Uniqueness</option>
+                                <option value="validity">Validity</option>
+                                <option value="accuracy">Accuracy</option>
+                            </select>
+                        </div>
+
+                        <button
+                            type="submit"
+                            id="create-rule"
+                            name="create-rule"
+                            class="btn btn-primary"
+                        >
+                            + Create Rule
+                        </button>
+
+                    </form>
+
+                </section>
+
+                <!-- Footer -->
+                <footer class="mt-5">
+                    <p class="text-muted">
+                        SchemaGuard © 2026. All rights reserved.
+                    </p>
+                </footer>
+
+            </main>
+
+        </div>
+
+    </div>
+
+</body>
+
 </html>

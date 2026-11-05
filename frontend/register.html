@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create your SchemaGuard account">
+    <title>Register | SchemaGuard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="auth-wrapper">
+
+        <section class="form-container">
+
+            <!-- Branding -->
+            <div style="text-align: center; margin-bottom: 28px;">
+
+                <h1 style="color: var(--primary); margin-bottom: 8px;">
+                    SchemaGuard
+                </h1>
+
+                <h2>Create Your Account</h2>
+
+                <p>
+                    Start monitoring and improving your data quality.
+                </p>
+
+            </div>
+
+            <!-- Registration Form -->
+            <form id="registerForm" action="#" method="post">
+
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+
+                    <input
+                        type="text"
+                        id="fullname"
+                        name="fullname"
+                        class="form-control"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="form-control"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        class="form-control"
+                        placeholder="Create a password"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+
+                    <small>Use at least 8 characters.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+
+                    <input
+                        type="password"
+                        id="confirm-password"
+                        name="confirm-password"
+                        class="form-control"
+                        placeholder="Confirm your password"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+                </div>
+
+                <!-- Terms and Conditions -->
+                <div class="form-group flex-center gap-2"
+                     style="justify-content: flex-start;">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        name="terms"
+                        required
+                    >
+
+                    <label for="terms" style="margin: 0;">
+                        I agree to the Terms and Conditions
+                    </label>
+
+                </div>
+
+                <!-- Submit Button -->
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                    style="width: 100%;"
+                >
+                    Create Account
+                </button>
+
+            </form>
+
+            <!-- Login Redirect -->
+            <div style="text-align: center; margin-top: 24px;">
+
+                <p>
+                    Already have an account?
+                    <a href="login.html">Sign in</a>
+                </p>
+
+            </div>
+
+            <hr>
+
+            <!-- Back to Dashboard -->
+            <div style="text-align: center; margin-top: 18px;">
+
+                <a href="index.html">← Back to Dashboard</a>
+
+            </div>
+
+            <!-- Footer -->
+            <div style="text-align: center; margin-top: 20px;">
+                <small>SchemaGuard © 2026. All rights reserved.</small>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Password Confirmation Validation -->
+    <script>
+        const registerForm = document.getElementById("registerForm");
+
+        registerForm.addEventListener("submit", function(event) {
+
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm-password").value;
+
+            if (password !== confirmPassword) {
+                event.preventDefault();
+                alert("Passwords do not match!");
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>

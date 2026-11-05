@@ -1,118 +1,271 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Issues | SchemaGuard</title>
-    </head>
 
-    <body>
-        <header>
-            <h1>SchemaGuard</h1>
-            <nav>
-                <a href="index.html">Dashboard</a>
-                <a href="datasets.html">Datasets</a>
-                <a href="rules.html">Rules</a>
-                <a href="issues.html">Issues</a>
-                <a href="login.html">Login</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issues | SchemaGuard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                SchemaGuard
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="index.html" class="sidebar-link">Dashboard</a>
+                <a href="datasets.html" class="sidebar-link">Datasets</a>
+                <a href="rules.html" class="sidebar-link">Validation Rules</a>
+                <a href="issues.html" class="sidebar-link active">Issues</a>
             </nav>
-        </header>
 
-        <main>
-            <h2>Data Quality Issues</h2>
-            <p>Monitor and resolve data quality issues detected across your datasets.</p>
-            <section>
-                <h2>Issue Summary</h2>
-                <section>
-                    <h3>Total Issues</h3>
-                    <p>24</p>
+            <nav class="sidebar-nav" style="margin-top: auto;">
+                <a href="login.html" class="sidebar-link">Login</a>
+                <a href="register.html" class="sidebar-link">Register</a>
+            </nav>
+
+        </aside>
+
+        <!-- Main Content -->
+        <div class="dashboard-main">
+
+            <!-- Topbar -->
+            <header class="topbar">
+
+                <h3>Issues</h3>
+
+                <div class="user-profile">
+                    <div class="user-avatar">JM</div>
+                    <span>Admin</span>
+                </div>
+
+            </header>
+
+            <main class="dashboard-content">
+
+                <!-- Page Heading -->
+                <section class="mb-4">
+
+                    <h1 class="page-title">Data Quality Issues</h1>
+
+                    <p class="page-subtitle">
+                        Monitor, investigate and resolve data quality issues
+                        detected across your datasets.
+                    </p>
+
                 </section>
-                <section>
-                    <h3>Critical</h3>
-                    <p>8</p>
+
+                <!-- Issue Summary -->
+                <section class="mb-4">
+
+                    <div class="flex-between mb-3">
+                        <h3>Issue Summary</h3>
+                        <span class="text-muted">Current Overview</span>
+                    </div>
+
+                    <div class="kpi-grid">
+
+                        <article class="kpi-card">
+                            <span class="kpi-label">Total Issues</span>
+                            <span class="kpi-value">24</span>
+                            <span class="kpi-change text-info">
+                                All detected issues
+                            </span>
+                        </article>
+
+                        <article class="kpi-card">
+                            <span class="kpi-label">Critical Issues</span>
+                            <span class="kpi-value">8</span>
+                            <span class="kpi-change text-danger">
+                                High priority
+                            </span>
+                        </article>
+
+                        <article class="kpi-card">
+                            <span class="kpi-label">Warnings</span>
+                            <span class="kpi-value">16</span>
+                            <span class="kpi-change text-warning">
+                                Require review
+                            </span>
+                        </article>
+
+                        <article class="kpi-card">
+                            <span class="kpi-label">Unresolved</span>
+                            <span class="kpi-value">3</span>
+                            <span class="kpi-change text-danger">
+                                Awaiting action
+                            </span>
+                        </article>
+
+                    </div>
+
                 </section>
-                <section>
-                    <h3>Warnings</h3>
-                    <p>16</p>
+
+                <!-- Issues Table -->
+                <section class="panel mb-4">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h3>Detected Issues</h3>
+                            <p>Review validation failures and their current status.</p>
+                        </div>
+
+                        <span class="badge-info">24 Issues</span>
+
+                    </div>
+
+                    <!-- Filters -->
+                    <div class="search-filter">
+
+                        <input
+                            type="search"
+                            class="form-control"
+                            placeholder="Search issues..."
+                            aria-label="Search issues"
+                        >
+
+                        <select class="form-control" aria-label="Filter by severity">
+                            <option value="">All Severities</option>
+                            <option value="critical">Critical</option>
+                            <option value="warning">Warning</option>
+                        </select>
+
+                        <select class="form-control" aria-label="Filter by status">
+                            <option value="">All Statuses</option>
+                            <option value="resolved">Resolved</option>
+                            <option value="unresolved">Unresolved</option>
+                        </select>
+
+                    </div>
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Issue ID</th>
+                                    <th>Description</th>
+                                    <th>Dataset</th>
+                                    <th>Severity</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>SG001</td>
+                                    <td><strong>Missing customer email</strong></td>
+                                    <td>Customers.csv</td>
+                                    <td>
+                                        <span class="badge-danger">Critical</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge-warning">Unresolved</span>
+                                    </td>
+                                    <td>
+                                        <a href="#SG001">View</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>SG002</td>
+                                    <td><strong>Duplicate transaction ID</strong></td>
+                                    <td>Transactions.csv</td>
+                                    <td>
+                                        <span class="badge-warning">Warning</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge-success">Resolved</span>
+                                    </td>
+                                    <td>
+                                        <a href="#SG002">View</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>SG003</td>
+                                    <td><strong>Invalid employee age</strong></td>
+                                    <td>Employees.xlsx</td>
+                                    <td>
+                                        <span class="badge-danger">Critical</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge-warning">Unresolved</span>
+                                    </td>
+                                    <td>
+                                        <a href="#SG003">View</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>SG004</td>
+                                    <td><strong>Missing phone number</strong></td>
+                                    <td>Customers.csv</td>
+                                    <td>
+                                        <span class="badge-warning">Warning</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge-warning">Unresolved</span>
+                                    </td>
+                                    <td>
+                                        <a href="#SG004">View</a>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
                 </section>
-            </section>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th scope="col">Issue ID</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Dataset</th>
-                        <th scope="col">Severity</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Action</th>
-                    </tr>   
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>SG001</td>
-                        <td>Missing customer email</td>
-                        <td>Customers.csv</td>
-                        <td>Critical</td>
-                        <td>Unresolved</td>
-                        <td><button type="button">View</button></td>
-                    </tr>
-                    <tr>
-                        <td>SG002</td>
-                        <td>Duplicate transaction ID</td>
-                        <td>Transactions.csv</td>
-                        <td>Warning</td>
-                        <td>Resolved</td>
-                        <td><button type="button">View</button></td>
-                    </tr>
-                    <tr>
-                        <td>SG003</td>
-                        <td>Invalid employee age</td>
-                        <td>Employees.xlsx</td>
-                        <td>Critical</td>
-                        <td>Unresolved</td>
-                        <td><button type="button">View</button></td>
-                    </tr>
-                    <tr>
-                        <td>SG004</td>
-                        <td>Missing phone number</td>
-                        <td>Customers.csv</td>
-                        <td>Warning</td>
-                        <td>Unresolved</td>
-                        <td><button type="button">View</button></td>
-                    </tr>
-                </tbody>
-            </table>
+                <!-- Issue Resolution Information -->
+                <section class="panel">
 
-            <section>
-                <h3>Filter Issues</h3>
-                <form>
-                    <label for="severity">Severity:</label>
-                    <select id="severity" name="severity">
-                        <option value="" disabled selected>Select an option...</option>
-                        <option value="all-severity">All Severities</option>
-                        <option value="critical">Critical</option>
-                        <option value="warning">Warning</option>
-                    </select>
+                    <div class="panel-header">
+                        <h3>Issue Resolution</h3>
+                    </div>
 
-                    <label for="status">Status:</label>
-                    <select id="status" name="status">
-                        <option value="" disabled selected>Select an option...</option>
-                        <option value="all-status">All Statuses</option>
-                        <option value="resolved">Resolved</option>
-                        <option value="unresolved">Unresolved</option>
-                    </select>
-                </form>
-            </section>
+                    <p>
+                        Review critical issues first, investigate affected
+                        records and resolve validation failures to improve
+                        your overall dataset quality.
+                    </p>
 
-            
-        
-        </main>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="badge-danger">Critical: High priority</span>
+                        <span class="badge-warning">Warning: Review required</span>
+                        <span class="badge-success">Resolved: Completed</span>
+                    </div>
 
-        <footer>
-            SchemaGuard © 2026
-        </footer>
-        
-    </body>
-    
+                </section>
+
+                <!-- Footer -->
+                <footer class="mt-5">
+                    <p class="text-muted">
+                        SchemaGuard © 2026. All rights reserved.
+                    </p>
+                </footer>
+
+            </main>
+
+        </div>
+
+    </div>
+
+</body>
+
 </html>

@@ -5,105 +5,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Dashboard | SchemaGuard</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <header>
-        <h1>SchemaGuard</h1>
-        <nav>
-            <a href="index.html">Dashboard</a>
-            <a href="datasets.html">Datasets</a>
-            <a href="rules.html">Rules</a>
-            <a href="issues.html">Issues</a>                
-            <a href="login.html">Login</a>
-        </nav>
-    </header>
 
-    <main>
-        <section>
-        <h2>Dashboard Overview</h2>
-        <p>Monitor your datasets, validation rules, and data quality performance in one place.</p>
+    <div class="dashboard-layout">
 
-        </section>
-        <section>
-            <h2>Overview Metrics</h2>
-            <section>
-                <h3>Total Datasets</h3>
-                <p>24</p>
-            </section>
-            <section>
-                <h3>Validation Rules</h3>
-                <p>12</p>
-            </section>
-            <section>
-                <h3>Detected Issues</h3>
-                <p>24</p>
-            </section>
-            <section>
-                <h3>Data Quality Score</h3>
-                <p>94%</p>
-            </section>
-        </section>
+        <!-- Sidebar -->
+        <aside class="sidebar">
 
+            <div class="sidebar-logo">
+                SchemaGuard
+            </div>
 
-        <section>
-            <h2>Recent Datasets</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th scope="col">Dataset Name</th>
-                        <th scope="col">File Type</th>
-                        <th scope="col">Records</th>
-                        <th scope="col">Status</th>
-                    </tr>   
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Customers</td>
-                        <td>CSV</td>
-                        <td>1,500</td>
-                        <td>Validated</td>
-                    </tr>
-                    <tr>
-                        <td>Employees</td>
-                        <td>Excel</td>
-                        <td>800</td>
-                        <td>Pending</td>
-                    </tr>
-                    <tr>
-                        <td>Transactions</td>
-                        <td>CSV</td>
-                        <td>2,500</td>
-                        <td>Failed</td>
-                    </tr>
-                </tbody>
-            </table>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="sidebar-link active">Dashboard</a>
+                <a href="datasets.html" class="sidebar-link">Datasets</a>
+                <a href="rules.html" class="sidebar-link">Validation Rules</a>
+                <a href="issues.html" class="sidebar-link">Issues</a>
+            </nav>
 
-        </section>
-        
+            <nav class="sidebar-nav" style="margin-top: auto;">
+                <a href="login.html" class="sidebar-link">Login</a>
+                <a href="register.html" class="sidebar-link">Register</a>
+            </nav>
 
-        <section>
-            <h2>Recent Issues</h2>
-            <ul>
-                <li>Missing customer email — Critical</li>
-                <li>Duplicate transaction ID — Warning</li>
-                <li>Invalid employee age — Critical</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Quick Actions</h2>
-            <a href="datasets.html">Manage Datasets</a>
-            <a href="rules.html">Manage Rules</a>
-            <a href="issues.html">View Issues</a>
-        </section>
+        </aside>
 
-    </main>
-    <footer>
-        SchemaGuard © 2026
-    </footer>
-    
+        <!-- Main Dashboard -->
+        <div class="dashboard-main">
+
+            <!-- Topbar -->
+            <header class="topbar">
+
+                <h3>Dashboard</h3>
+
+                <div class="user-profile">
+                    <div class="user-avatar">JM</div>
+                    <span>Admin</span>
+                </div>
+
+            </header>
+
+            <main class="dashboard-content">
+
+                <!-- Dashboard Heading -->
+                <section class="mb-4">
+
+                    <h1 class="page-title">Dashboard Overview</h1>
+
+                    <p class="page-subtitle">
+                        Monitor your datasets, validation rules and data quality performance.
+                    </p>
+
+                </section>
+
+                <!-- Overview Metrics -->
+                <section class="mb-4">
+
+                    <div class="flex-between mb-3">
+                        <h3>Overview Metrics</h3>
+                        <span class="text-muted">Workspace Overview</span>
+                    </div>
+
+                    <div class="kpi-grid">
+
+                        <article class="kpi-card">
+                            <span class="kpi-label">Total Datasets</span>
+                            <span class="kpi-value">24</span>
+                            <span class="kpi-change text-info">
+                                Uploaded datasets
+                            </span>
+                        </article>
+
+                        <article class="kpi-card">
+                            <span class="kpi-label">Validation Rules</span>
+                            <span class="kpi-value">12</span>
+                            <span class="kpi-change text-info">
+                                Active rules
+                            </span>
+                        </article>
+
+                        <article class="kpi-card">
+                            <span class="kpi-label">Detected Issues</span>
+                            <span class="kpi-value">24</span>
+                            <span class="kpi-change text-danger">
+                                Require attention
+                            </span>
+                        </article>
+
+                        <article class="kpi-card">
+                            <span class="kpi-label">Data Quality Score</span>
+                            <span class="kpi-value">94%</span>
+                            <span class="kpi-change text-success">
+                                Overall quality
+                            </span>
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <!-- Recent Datasets -->
+                <section class="panel mb-4">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h3>Recent Datasets</h3>
+                            <p>Recently uploaded and monitored datasets.</p>
+                        </div>
+
+                        <a href="datasets.html" class="btn btn-outline">
+                            View All
+                        </a>
+
+                    </div>
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Dataset Name</th>
+                                    <th>File Type</th>
+                                    <th>Records</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td><strong>Customers</strong></td>
+                                    <td>CSV</td>
+                                    <td>1,500</td>
+                                    <td>
+                                        <span class="badge-success">Validated</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>Employees</strong></td>
+                                    <td>Excel</td>
+                                    <td>800</td>
+                                    <td>
+                                        <span class="badge-warning">Pending</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>Transactions</strong></td>
+                                    <td>CSV</td>
+                                    <td>2,500</td>
+                                    <td>
+                                        <span class="badge-danger">Failed</span>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+                <!-- Recent Issues and Quick Actions -->
+                <section class="dashboard-panels">
+
+                    <!-- Recent Issues -->
+                    <article class="panel">
+
+                        <div class="panel-header">
+                            <div>
+                                <h3>Recent Issues</h3>
+                                <p>Data quality problems detected.</p>
+                            </div>
+
+                            <a href="issues.html">View All</a>
+                        </div>
+
+                        <div class="mb-3">
+                            <p class="text-primary">
+                                Missing customer email
+                            </p>
+                            <span class="badge-danger">Critical</span>
+                        </div>
+
+                        <hr>
+
+                        <div class="mb-3">
+                            <p class="text-primary">
+                                Duplicate transaction ID
+                            </p>
+                            <span class="badge-warning">Warning</span>
+                        </div>
+
+                        <hr>
+
+                        <div>
+                            <p class="text-primary">
+                                Invalid employee age
+                            </p>
+                            <span class="badge-danger">Critical</span>
+                        </div>
+
+                    </article>
+
+                    <!-- Quick Actions -->
+                    <article class="panel">
+
+                        <div class="panel-header">
+                            <div>
+                                <h3>Quick Actions</h3>
+                                <p>Navigate to key workspace features.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2">
+
+                            <a href="datasets.html" class="btn btn-primary">
+                                Manage Datasets
+                            </a>
+
+                            <a href="rules.html" class="btn btn-secondary">
+                                Manage Rules
+                            </a>
+
+                            <a href="issues.html" class="btn btn-outline">
+                                View Issues
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+                <!-- Footer -->
+                <footer class="mt-5">
+                    <p class="text-muted">
+                        SchemaGuard © 2026. All rights reserved.
+                    </p>
+                </footer>
+
+            </main>
+
+        </div>
+
+    </div>
 
 </body>
+
 </html>
